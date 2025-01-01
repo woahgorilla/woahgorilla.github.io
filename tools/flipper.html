@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text flipper</title>
+    <style>
+        body {
+            display: inline-block;
+            background-color: #2c3e50; /* Dark background */
+            color: white; /* White text */
+            font-family: 'Arial', sans-serif; /* Font style */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            margin-bottom: 20px; /* Space below title */
+            display: inline-block;
+        }
+
+        textarea {
+            /*width: 300px; *//* Fixed width for the input */
+            padding: 10px; /* Padding for the input */
+            margin-bottom: 10px; /* Space below input */
+            border: 1px solid #ecf0f1; /* Light border */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Font size */
+            background-color: #34495e; /* Dark input background */
+            color: white; /* White text */
+            width: 400px
+        }
+        button {
+            padding: 10px 15px; /* Padding for buttons */
+            border: solid; /* Makes border look good */
+            border-radius: 10px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor */
+            font-size: 16px; /* Font size */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        button.open {
+            background-color: #3498db; /* Blue button */
+            border-color: #2c81ba;
+            color: white; /* White text */
+        }
+
+        button.open:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+            border-color: #236e9f;
+        }
+
+        button.clear {
+            background-color: #e74c3c; /* Red button */
+            border-color: #ca4334;
+            color: white; /* White text */
+            margin-left: 10px; /* Space between buttons */
+        }
+
+        button.clear:hover {
+            background-color: #c0392b; /* Darker red on hover */
+            border-color: #a43024;
+        }
+
+        iframe {
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            border: none; /* No border */
+        }
+        ::placeholder {
+        text-align: center;
+        }
+
+        ::-ms-input-placeholder { /* Edge 12 -18 */
+        text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flip text upside-down!</h1>
+    <textarea id="Input" placeholder="Enter what you want to flip."></textarea>
+    <textarea readonly="" id="output" placeholder="Output"></textarea>
+    <br>
+    <div>
+        <button class="open" onclick="document.getElementById('output').value = flip(document.getElementById('Input').value.split('').reverse('').join(''));">Flip spin</button>
+        <button class="open" onclick="document.getElementById('output').value = flip(document.getElementById('Input').value)">Flip mirror</button>
+        <button class="clear" onclick="document.getElementById('Input').value = ''; document.getElementById('output').value = '';">Clear Fields</button>
+        
+    </div>
+    <script>
+        function flip(str) {
+            return str.replace(/a/g, 'ɐ').replace(/b/g, 'q').replace(/c/g, 'ɔ').replace(/d/g, 'p').replace(/e/g, 'ǝ').replace(/f/g, 'ɟ').replace(/g/g, 'ƃ').replace(/h/g, 'ɥ').replace(/i/g,'ı').replace(/j/g, 'ɾ').replace(/k/g, 'ʞ').replace(/m/g, 'ɯ').replace(/n/g, 'u').replace(/p/g, 'd').replace(/q/g, 'b').replace(/r/g, 'ɹ').replace(/t/g, 'ʇ').replace(/u/g, 'n').replace(/v/g, 'ʌ').replace(/w/g, 'ʍ').replace(/y/g, 'ʎ').replace(/'?'/g, '¿').replace(/!/g, '¡').replace(/&/g, '⅋').replace(/_/g, '‾').replace(/"/g, ',,').replace('.', '˙');
+        }
+    </script>
+</body>
+</html>
