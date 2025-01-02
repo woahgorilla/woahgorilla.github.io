@@ -49,7 +49,7 @@
   </head>
   <body style="background-color: #2c3e50; color: white; font-family: sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
     <h1 style="font-size: 3em; text-align: center;">
-      GorillaBoard
+      GorillaBoard<br>(may be broken)
     </h1>
     <span id="subtitle" style="font-size: 1.5em;">Save your copied text for later if you need to copy something else, restart your computer, or anything else!</span>
     <p style="text-align: center; max-width: 600px; ">
@@ -75,12 +75,12 @@
         document.getElementById("save2").value = ls.getItem("save2")
         document.getElementById("save3").value = ls.getItem("save3")
         document.getElementById("save4").value = ls.getItem("save4")
-        
+        console.log('loaded saved data')
       }
-      document.getElementById("save1").addEventListener("input", (event) => ls.setItem("save1", document.getElementById("save1").value));
-      document.getElementById("save2").addEventListener("input", (event) => ls.setItem("save2", document.getElementById("save2").value));
-      document.getElementById("save3").addEventListener("input", (event) => ls.setItem("save3", document.getElementById("save3").value));
-      document.getElementById("save4").addEventListener("input", (event) => ls.setItem("save4", document.getElementById("save4").value));
+      document.getElementById("save1").addEventListener("input", (event) => {ls.setItem("save1", document.getElementById("save1").value); console.log('saved item')});
+      document.getElementById("save2").addEventListener("input", (event) => {ls.setItem("save2", document.getElementById("save2").value); console.log('saved item')});
+      document.getElementById("save3").addEventListener("input", (event) => {ls.setItem("save3", document.getElementById("save3").value); console.log('saved item')});
+      document.getElementById("save4").addEventListener("input", (event) => {ls.setItem("save4", document.getElementById("save4").value); console.log('saved item')});
     </script>
     <p style="text-align: center; max-width: 600px; margin: 20px auto;">
         Made by Ultracat39. Don't contact me. I won't respond.
