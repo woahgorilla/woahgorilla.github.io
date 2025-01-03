@@ -70,13 +70,9 @@
     </p>
     <script>
       const ls = window.localStorage
-      document.onload = function() {
-        document.getElementById("save1").value = ls.getItem("save1")
-        document.getElementById("save2").value = ls.getItem("save2")
-        document.getElementById("save3").value = ls.getItem("save3")
-        document.getElementById("save4").value = ls.getItem("save4")
-        console.log('loaded saved data')
-      }
+      
+        console.log(ls.getItem("save1"))
+      
       document.getElementById("save1").addEventListener("input", (event) => {ls.setItem("save1", document.getElementById("save1").value); console.log('saved item', ls.getItem("save1"))});
       document.getElementById("save2").addEventListener("input", (event) => {ls.setItem("save2", document.getElementById("save2").value); console.log('saved item')});
       document.getElementById("save3").addEventListener("input", (event) => {ls.setItem("save3", document.getElementById("save3").value); console.log('saved item')});
