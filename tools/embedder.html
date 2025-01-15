@@ -17,9 +17,11 @@
             height: 100vh;
         }
 
+
         h1 {
             margin-bottom: 20px; /* Space below title */
         }
+
 
         input[type="text"] {
             /*width: 300px; *//* Fixed width for the input */
@@ -46,16 +48,19 @@
             transition: background-color 0.3s; /* Smooth transition */
         }
 
+
         button.open {
             background-color: #3498db; /* Blue button */
             border-color: #2c81ba;
             color: white; /* White text */
         }
 
+
         button.open:hover {
             background-color: #2980b9; /* Darker blue on hover */
             border-color: #236e9f;
         }
+
 
         button.clear {
             background-color: #e74c3c; /* Red button */
@@ -64,10 +69,12 @@
             margin-left: 10px; /* Space between buttons */
         }
 
+
         button.clear:hover {
             background-color: #c0392b; /* Darker red on hover */
             border-color: #a43024;
         }
+
 
         iframe {
             width: 100%; /* Full width */
@@ -77,6 +84,7 @@
         ::placeholder {
         text-align: center;
         }
+
 
         ::-ms-input-placeholder { /* Edge 12 -18 */
         text-align: center;
@@ -93,25 +101,22 @@
         <button class="clear" onclick="clearInput()">Clear Fields</button>
     </div>
 
+
     <script>
         function openInIframe() {
-            var title = "about:blank"
             // Get the user-entered URL from the input box
             const url = document.getElementById('urlInput').value;
-            console.log(document.getElementById('titleInput').value);
-            if (document.getElementById('titleInput').value != "") {
-                title = document.getElementById('titleInput').value;
-                console.log(title)
-            }
-            }
+            const title = document.getElementById('titleInput').value;
             // Validate if the user entered a valid URL
             if (!url || !isValidURL(url)) {
                 alert('Please enter a valid URL (e.g., https://example.com)');
                 return;
             }
 
+
             // Open an about:blank window
             const newWindow = window.open('about:blank', '_blank');
+
 
             // The HTML content for the new window, including the iframe
             const iframeHTML = `
@@ -141,16 +146,19 @@
                 </html>
             `;
 
+
             // Write the iframe content to the new window
             newWindow.document.write(iframeHTML);
             newWindow.document.close();
         }
+
 
         // Clear the input field
         function clearInput() {
             document.getElementById('urlInput').value = '';
             document.getElementById('titleInput').value = '';
         }
+
 
         // URL validation function
         function isValidURL(string) {
