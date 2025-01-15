@@ -97,7 +97,12 @@
         function openInIframe() {
             // Get the user-entered URL from the input box
             const url = document.getElementById('urlInput').value;
-            const title = document.getElementById('titleInput').value;
+            if (document.getElementById('titleInput').value == "") {
+                const title = document.getElementById('titleInput').value;
+            }
+            else {
+                const title = "about:blank";
+            }
             // Validate if the user entered a valid URL
             if (!url || !isValidURL(url)) {
                 alert('Please enter a valid URL (e.g., https://example.com)');
@@ -113,7 +118,7 @@
                 <html lang="en">
                 <head>
                     <meta charset="UTF-8">
-                    <title>"${title}"</title>
+                    <title>${title}</title>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                     <style>
                         body {
