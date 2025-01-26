@@ -260,8 +260,10 @@
         "Thanks, Pastebin?",
         "I need a better testing system.",
         "Free?",
+        "Thanks to gzuidhof?",
       ];
       var randomIndex = Math.floor(Math.random() * greetings.length);
+      console.log(greetings.length)
       return greetings[randomIndex];
     }
     document.getElementById("subtitle").innerText = getRandomGreeting();
