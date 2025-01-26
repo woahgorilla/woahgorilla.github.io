@@ -24,14 +24,14 @@
     </p>
     <script src="coi-serviceworker.min.js"></script>  <!--allows cross-origin requests-->
     <script>
-      window.coi = {
-    shouldRegister: () => !reloadedBySelf,
-    shouldDeregister: () => false,
-    coepCredentialless: () => true,
-    coepDegrade: () => true,
-    doReload: () => window.location.reload(),
-    quiet: false
-}
+    window.coi = {
+      shouldRegister: () => !reloadedBySelf,
+      shouldDeregister: () => false,
+      coepCredentialless: () => true,
+      coepDegrade: () => true,
+      doReload: () => window.location.reload(),
+      quiet: false
+    }
       function getDataFromURL(url) {
         var x
         affixScriptToHead("jquery-3.1.1.min.js", function() {
