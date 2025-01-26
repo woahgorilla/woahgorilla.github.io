@@ -31,7 +31,7 @@
       doReload: () => window.location.reload(),
       quiet: false
     }
-      /*function getDataFromURL(url) {
+      function getDataFromURL(url) {
         var x
         affixScriptToHead("jquery-3.1.1.min.js", function() {
             $.get(url, function( data ) {
@@ -52,7 +52,7 @@
         }
     
         return x;
-      }*/
+      }
 
 
       const urlShit = new URLSearchParams(window.location.search);
@@ -62,7 +62,7 @@
       else {
         const src = urlShit.get("p")
         
-        document.getElementById("target").innerHTML = fetch('https://corsproxy.io/' + encodeURIComponent('https://pastebin.com/raw/'+src));
+        document.getElementById("target").innerHTML = getDataFromURL('https://corsproxy.io/' + encodeURIComponent('https://pastebin.com/raw/'+src));
       };
 
     </script>
