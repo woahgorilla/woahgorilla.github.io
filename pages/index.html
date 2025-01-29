@@ -88,7 +88,7 @@
         const src = urlShit.get("p")
         
         //document.getElementById("target").innerHTML = getPastebinHTML(src);
-        fetch('https://pastebin.com/raw/'+src)
+        CORSRequest('https://pastebin.com/raw/'+src)
    .then( response => response.json() )
    .then( data => console.log(data) )
       };
