@@ -13,6 +13,7 @@
     <title>woahgorilla.github.io</title>
   </head>
   <body id="target">
+    <img src="oofy.webp">
     <h1 style="font-size: 3em; text-align: center;">
       haha lol
     </h1>
@@ -23,13 +24,9 @@
         Made by Ultracat39. Don't contact me. I won't respond.
     </p>
     <script>
-    window.coi = {
-      shouldRegister: () => !reloadedBySelf,
-      shouldDeregister: () => false,
-      coepCredentialless: () => true,
-      coepDegrade: () => true,
-      doReload: () => window.location.reload(),
-      quiet: false
+    /*async function getPastebinHTML(id) {
+      const y = await fetch('https://pastebin.com/raw/'+id);
+      return y;
     }
       function getDataFromURL(url) {
         var x
@@ -52,8 +49,35 @@
         }
     
         return x;
-      }
+      }*/
+      function CORSRequest(url) {
+   var xhr = new XMLHttpRequest();
 
+   if ("withCredentials" in xhr) {
+      // Check if the XMLHttpRequest object has a "withCredentials" property.
+      // "withCredentials" only exists on XMLHTTPRequest2 objects.
+      xhr.open("GET", url, true);
+   } else if (typeof XDomainRequest != "undefined") {
+      // Otherwise, check if XDomainRequest.
+      // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
+      xhr = new XDomainRequest();
+      xhr.open("GET", url);
+   } else {
+      // Otherwise, CORS is not supported by the browser.
+      throw new Error('CORS not supported');
+   }
+
+   if (xhr) {
+      xhr.onload = function() {
+         // process the response.
+         document.getElementById("sparql").value = xhr.responseText;
+      };
+      xhr.onerror = function() {
+         alert('Not loading.');
+      };
+   }
+   xhr.send();
+}
 
       const urlShit = new URLSearchParams(window.location.search);
       if (!urlShit.has("p")) {
@@ -62,7 +86,10 @@
       else {
         const src = urlShit.get("p")
         
-        document.getElementById("target").innerHTML = getDataFromURL('https://corsproxy.io/' + encodeURIComponent('https://pastebin.com/raw/'+src));
+        //document.getElementById("target").innerHTML = getPastebinHTML(src);
+        fetch('pastebin.com/raw/'+src)
+   .then( response => response.json() )
+   .then( data => console.log(data) )
       };
 
     </script>
