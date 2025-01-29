@@ -70,6 +70,7 @@
    if (xhr) {
       xhr.onload = function() {
          // process the response.
+          console.log(xhr.responseText);
          document.getElementById("sparql").value = xhr.responseText;
       };
       xhr.onerror = function() {
@@ -87,7 +88,7 @@
         const src = urlShit.get("p")
         
         //document.getElementById("target").innerHTML = getPastebinHTML(src);
-        fetch('pastebin.com/raw/'+src)
+        fetch('https://pastebin.com/raw/'+src)
    .then( response => response.json() )
    .then( data => console.log(data) )
       };
