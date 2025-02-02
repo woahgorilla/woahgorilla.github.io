@@ -1,101 +1,14 @@
 <!DOCTYPE html>
-<html lang="en-US"><head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    <meta name="keywords" content="woahgorilla, gorilla, whoagorilla, unblocked, unblocked, github, javascript ">
-    <meta property="og:title" content="Welcome to woahgorilla.github.io. Here you can find all sorts of awesome things to do!">
-    <meta property="og:site_name" content="woahgorilla.github.io">
-    <meta property="og:description" content="Welcome to woahgorilla.github.io. Here you can find all sorts of awesome things to do!">
-    <meta name="description" content="Welcome to woahgorilla.github.io. Here you can find all sorts of awesome things to do!">
-    <meta name="author" content="Ultracat39">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>woahgorilla.github.io</title>
-  </head>
-  <body id="target">
-    <img src="oofy.webp" style="display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30%;">
-    <h1 style="font-size: 3em; text-align: center;">
-      haha lol
-    </h1>
-    <p style="text-align: center;  margin: 20px auto;" id="notice">
-      Something isn't working.<br> Check back later, I guess.
-    </p>
-    <p style="text-align: center; max-width: 600px; margin: 20px auto;">
-        Made by Ultracat39. Don't contact me. I won't respond.
-    </p>
-    <script>
-    /*async function getPastebinHTML(id) {
-      const y = await fetch('https://pastebin.com/raw/'+id);
-      return y;
-    }
-      function getDataFromURL(url) {
-        var x
-        affixScriptToHead("jquery-3.1.1.min.js", function() {
-            $.get(url, function( data ) {
-                x = data
-            });
-        });
-    
-        function loadError(oError) {
-            throw new URIError("The script " + oError.target.src + " didn't load correctly.");
-        }
-    
-        function affixScriptToHead(uri, onloadFunction) {
-            var newScript = document.createElement("script");
-            newScript.onerror = loadError;
-            if (onloadFunction) { newScript.onload = onloadFunction; }
-            document.head.appendChild(newScript);
-            newScript.src = uri;
-        }
-    
-        return x;
-      }*/
-      function CORSRequest(url) {
-   var xhr = new XMLHttpRequest();
-
-   if ("withCredentials" in xhr) {
-      // Check if the XMLHttpRequest object has a "withCredentials" property.
-      // "withCredentials" only exists on XMLHTTPRequest2 objects.
-      xhr.open("GET", url, true);
-   } else if (typeof XDomainRequest != "undefined") {
-      // Otherwise, check if XDomainRequest.
-      // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
-      xhr = new XDomainRequest();
-      xhr.open("GET", url);
-   } else {
-      // Otherwise, CORS is not supported by the browser.
-      throw new Error('CORS not supported');
-   }
-
-   if (xhr) {
-      xhr.onload = function() {
-         // process the response.
-          console.log(xhr.responseText);
-         document.getElementById("sparql").value = xhr.responseText;
-      };
-      xhr.onerror = function() {
-         alert('Not loading.');
-      };
-   }
-   xhr.send();
-}
-
-      const urlShit = new URLSearchParams(window.location.search);
-      if (!urlShit.has("p")) {
-        document.getElementById("notice").innerText = "The link you used does not seem to work.\nYou might have typed the wrong thing into the URL bar.\nIf you are sure you are using the correct URL, contact the owner and let them know that they are an idiot.\nIf you're the owner, make sure the paste is set to 'public' or 'unlisted'. (also, you're an idiot lol)";
-      }
-      else {
-        const src = urlShit.get("p")
-        
-        //document.getElementById("target").innerHTML = getPastebinHTML(src);
-        CORSRequest('https://pastebin.com/raw/'+src)
-   .then( response => response.json() )
-   .then( data => console.log(data) )
-      };
-
-    </script>
-  </body>
+<html id="jeff_bezos">
+    <head>
+        <!--eeeeee-->
+    </head>
+    <body>
+        <script>
+            //document.getElementById("jeff_bezos").innerHTML="<head><!--eeeeee--></head><body><p>oofy</p></body>"
+        </script>
+        <script src="main.js"></script>
+        <script type="module" src="xmlGetHttpRequest.js"></script>
+        <script type="module" src="get-gist-first-file-text.js"></script>
+    </body>
 </html>
