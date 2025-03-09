@@ -1,3 +1,4 @@
+<!--made with ¬ᴗ¬ by Ultracat39-->
 <!DOCTYPE html>
 <html><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -101,7 +102,7 @@ a {
   text-align: center;
   border-radius: 5px;
 }
-#mySearch {
+#search {
   width: 50%;
   text-align: center;
   font-size: 18px;
@@ -119,12 +120,10 @@ a {
     <p class="text-center">All of the games on WoahGorilla.github.io! Browse our awesome collection and discover loads of new games or play old favorites!</p>
     <br>
     <div class="text-center">
-      <input type="text" class="text-center" id="mySearch" onload="startSearch()" onkeyup="startSearch()" placeholder="Search WoahGorilla Games..." title="Search">
+      <input type="text" class="text-center" id="search" onload="startSearch()" onkeyup="startSearch()" placeholder="Search WoahGorilla Games..." title="Search">
     </div>
     <script src="extras/search.js"></script>
-
-    <div>
-    <div id="search" class="flex-container">
+    <div id="search-target" class="flex-container">
       <a href="n-gon/" class="game-link container">
         <div class="game-tile">
           <img class="game-icon" src="n-gon/n-gon.png" alt="icon" loading="lazy">
@@ -149,6 +148,12 @@ a {
           <h1 class="game-title">Infernal throne</h1>
         </div>
       </a>
+      <a href="q1k3/" class="game-link container">
+        <div class="game-tile">
+          <img class="game-icon" src="extras/q1k3icon.webp" alt="icon" loading="lazy">
+          <h1 class="game-title">Q1K3</h1>
+        </div>
+      </a>
       <a href="underrun/" class="game-link container">
         <div class="game-tile">
           <img class="game-icon" src="underrun/icon.png" alt="icon" loading="lazy">
@@ -171,12 +176,6 @@ a {
         <div class="game-tile">
           <img class="game-icon" src="asteroids/icon.png" alt="icon" loading="lazy">
           <h1 class="game-title">Asteroids</h1>
-        </div>
-      </a>
-      <a href="n-gon-enhanced/" class="game-link container">
-        <div class="game-tile">
-          <img class="game-icon" src="n-gon-enhanced/icon.png" alt="icon" loading="lazy">
-          <h1 class="game-title">n-gon<br>enhanced</h1>
         </div>
       </a>
       <a href="Avabranch.html" class="game-link container">
@@ -303,21 +302,22 @@ a {
     </div>
       <br>
       <p style="font-size: 25px;" class="text-center"></p>
-      <button id="back-to-top" style="display: none; opacity: 0; position: fixed; bottom: 20px; right: 20px;">Back to top</button>
+      <button id="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px;">Back to top</button>
       <script>
-      const TopButton = document.getElementById('back-to-top');
+        const backToTopButton = document.getElementById('back-to-top');
         window.onscroll = function () {
           if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            TopButton.style.display = "block";
+            backToTopButton.style.display = "block";
+            console.log(document.documentElement.scrollTop)
           } else {
-          TopButton.style.opacity = "none";
+            backToTopButton.style.display = "none";
           }
         };
-        TopButton.onclick = function () {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      };
-        </script>
+        backToTopButton.onclick = function () {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        };
+      </script>
     <p style="font-size: 25px;" class="text-center">
       I am planning to add more stuff soon. Thank you for your patience.<br><br><br>
       Cant find what you are looking for?<br>
@@ -325,7 +325,7 @@ a {
       <br><br><a href="../" style="color:rgb(84, 84, 255)"><u>Back to the home page!</u></a>
       <br>
       <p style="text-align: center; max-width: 600px; margin: 20px auto;">
-        Made by Ultracat39. Don't contact me. I won't respond.
+        Made with ¬ᴗ¬ by Ultracat39. Don't contact me. I won't respond.
     </p>
     </p>
     <br>

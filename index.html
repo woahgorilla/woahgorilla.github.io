@@ -262,7 +262,6 @@
         "Free?",
         "Thanks to gzuidhof?",
         "187",
-        "188",
         "189",
         "190",
         "191",
@@ -291,6 +290,16 @@
         "Frog collection?",
         "What do you call a three headed toaster?\nJeff!",
         "Commit changes...",
+        "https://www.youtube.com/watch?v=ojuB7VCALqM",
+        "Why is there a wallet in my cupcake?",
+        '"WoahGorilla" translates to "There is no Volohar".',
+        "why is there no table emoji?",
+        "Table emoji. NOW!",
+        "Table emoji, or you will be crushed by A falling AC unit.",
+        "It's not a feature, it's a bug!",
+        "Free squirrels",
+        "you're not supposed to see this text...",
+        "You're not supposed to see this text..."
       ];
       var randomIndex = Math.floor(Math.random() * greetings.length);
       return greetings[randomIndex];
@@ -300,6 +309,9 @@
       document.addEventListener("keydown", (y) => {
       window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
       });
+    }
+    if (document.getElementById('subtitle').innerText === "you're not supposed to see this text...") {
+      document.getElementById('subtitle').innerHTML = '<img src="play/extras/table-cat.png">'
     }
     </script>
   </body>
