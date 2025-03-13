@@ -12,7 +12,7 @@ if (icon) {
     link.rel = 'icon';
     document.head.appendChild(link);
   }
-link.href = 'icon';
+link.href = icon;
 }
 if (title) {
   console.log(title)
