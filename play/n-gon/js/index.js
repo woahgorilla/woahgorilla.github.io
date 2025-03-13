@@ -1074,7 +1074,7 @@ ${simulation.difficultyMode > 4 ? `<details id="constraints-details" style="padd
         document.getElementById("experiment-grid").style.display = "grid"
     },
     shareURL(isCustom = false) {
-        let url = "https://landgreen.github.io/n-gon/index.html?"
+        let url = "https://woahgorilla.github.io/play/n-gon/index.html?"
         url += `&seed=${Math.initialSeed}`
         let count = 0;
         for (let i = 0; i < b.inventory.length; i++) {
