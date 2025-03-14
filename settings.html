@@ -111,13 +111,9 @@ input[type="text"] {
     <button id="reset" onclick="ls.setItem('!INTERNAL!icon',''); ls.setItem('!INTERNAL!title','')">Reset to defaults</button>
   </body>
   <script>
-    const file_img = document.getElementById('file-img');
     const text_img = document.getElementById('text-img');
     const titles = document.getElementById('titles')
-    document.onload = {}
     titles.onchange = function() {ls.setItem('!INTERNAL!title', titles.value)};
-    file_img.onchange = function() {console.log("eee");var canvas = document.createElement("canvas");context = canvas.getContext('2d');make_base();function make_base(){base_image = new Image();base_image.src = 'img/base.png';base_image.onload = function(){context.drawImage(base_image, 100, 100);console.log(canvas.toDataURL());ls.setItem('!INTERNAL!icon', canvas.toDataURL())}
-    text_img.onchange = function() {console.log('e');ls.setItem('!INTERNAL!icon', text_img.value); console.log(ls.getItem('!INTERNAL!icon'))}
-}}
+    text_img.onchange = function() {ls.setItem('!INTERNAL!icon', text_img.value); console.log(ls.getItem('!INTERNAL!icon'))}
   </script>
 </html>
