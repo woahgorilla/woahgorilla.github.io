@@ -11773,7 +11773,7 @@ const tech = {
         },
         requires: "",
         effect() {
-            window.open('../../planetesimals/index.html', '_blank')
+            window.open('../planetesimals/index.html', '_blank')
             // powerUps.spawn(m.pos.x, m.pos.y, "tech");
 
             // for communicating to other tabs, like planetesimals
