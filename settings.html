@@ -16,6 +16,7 @@
         font-size: 16px; /* Font size */
         background-color: #34495e; /* Dark input background */
         color: white; /* White text */
+        width: 800px;
         
     }
     input[type=file]::file-selector-button {
@@ -101,7 +102,7 @@ input[type="text"] {
   </head>
   <body style="background-color: #2c3e50; color: white; font-family: sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
     <h1 class="title">WoahGorilla settings</h1>
-    <h2>change settings such as tab cloaker.</h2>
+    <h2>Edit your experience on WoahGorilla!</h2>
     <div class="box">
       <h1>Cloaking</h1>
     <p>Tab icon: <input type="file" id="file-img"><input type="text" id="text-img" placeholder="Or enter image url"></p>
@@ -112,7 +113,7 @@ input[type="text"] {
   </body>
   <script>
     const text_img = document.getElementById('text-img');
-    const titles = document.getElementById('titles')
+    const titles = document.getElementById('titles');
     titles.onchange = function() {ls.setItem('!INTERNAL!title', titles.value)};
     text_img.onchange = function() {ls.setItem('!INTERNAL!icon', text_img.value); console.log(ls.getItem('!INTERNAL!icon'))}
   </script>
