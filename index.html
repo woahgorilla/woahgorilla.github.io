@@ -15,82 +15,63 @@
     <title>woahgorilla.github.io</title>
     <style> 
       a {
-            padding: 10px 15px; /* Padding for buttons */
-            border: solid; /* Makes border look good */
-            border-radius: 10px; /* Rounded corners */
-            cursor: pointer; /* Pointer cursor */
-            font-size: 16px; /* Font size */
-            transition: 0.3s; /* Smooth transition */
+            padding: 0.7vw 1.05vw;
+            border: solid;
+            border-radius: 1.12vw;
+            cursor: pointer;
+            font-size: 1.12vw;
+            transition: 0.3s;
         }
       .play {
         cursor: pointer; 
         border: solid; 
-        border-radius: 5px; 
+        border-radius: 0.35vw; 
         background-color: #22c55e;
         border-color: #1dad52;
         color: white; 
-        padding: 15px 32px; 
+        padding: 1.05vw 2.24vw; 
         text-align: center; 
         text-decoration: none; 
         display: inline-block; 
-        font-size: 16px; 
-        border-radius: 20px; 
-        margin-top: 20px;
+        font-size: 1.12vw; 
+        border-radius: 1.4vw; 
+        margin-top: 1.4vw;
       }
       a.play:hover {
         background-color: #1db154;
         border-color: #199847;
       }
-      .tools {cursor: pointer; 
+      .settings {cursor: pointer; 
         background-color: #0048ff; 
         border: solid; 
-        border-radius: 5px; 
+        border-radius: 0.35vw; 
         border-color: #0041e5;
         color: white; 
-        padding: 15px 32px; 
+        padding: 1.05vw 1.4vw; 
         text-align: center; 
         text-decoration: none; 
         display: inline-block; 
-        font-size: 16px; 
-        border-radius: 20px; 
-        margin-top: 20px;
-      }
-      a.tools:hover {
-        background-color: #0043eb; 
-        border-color: #003bd0;
-      }
-      .settings {cursor: pointer; 
-        background-color: #ee00ff; 
-        border: solid; 
-        border-radius: 5px; 
-        border-color: #d000df;
-        color: white; 
-        padding: 15px 20px; 
-        text-align: center; 
-        text-decoration: none; 
-        display: inline-block; 
-        font-size: 16px; 
-        border-radius: 20px; 
-        margin-top: 20px;
+        font-size: 1.12vw; 
+        border-radius: 1.4vw; 
+        margin-top: 1.4vw;
       }
       a.settings:hover {
-        background-color: #d000df; 
-        border-color: #b700c4;
+        background-color: #0043eb; 
+        border-color: #003bd0;
       }
     </style>
   </head>
   <body style="background-color: #2c3e50; color: white; font-family: sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
-    <h1 style="font-size: 3em; text-align: center;">
+    <h1 style="font-size: 3.36vw; text-align: center;">
       WoahGorilla.github.io
     </h1>
-    <span id="subtitle" onclick="getRandomGreeting()" style="font-size: 1.5em;text-align: center;">¬ᴗ¬<br>lol the thingy didn't load</span>
-    <p style="text-align: center; max-width: 600px; margin: 20px auto;">
+    <span id="subtitle" onclick="getRandomGreeting()" style="font-size: 1.68vw;text-align: center;">¬ᴗ¬<br>lol the thingy didn't load</span>
+    <p style="text-align: center; max-width: 42vw; margin: 1.4vw auto;">
       Welcome to woahgorilla.github.io, a game site.<br>
       <a href="play/" class="play">PLAY!</button></a><br>
-      <a href="tools/" class="tools">Tools</button></a><br>
       <a href="settings.html" class="settings">Settings</a>
     </p>
-    <p style="text-align: center; max-width: 600px; margin: 20px auto;">
+    <p style="text-align: center; max-width: 42vw; margin: 1.4vw auto;">
         Made with ¬ᴗ¬ by Ultracat39. Don't contact me. I won't respond.
     </p>
     <script>
@@ -328,6 +309,8 @@
         "Evolution has evoluted",
         "Mayonaise is the worst condiment",
         "https://www.youtube.com/shorts/mU0hCDhBnoo",
+        "https://youtube.com/shorts/aKK3rWwEj_c?si=Z6zrxLQko7Y1OCxs",
+        "Ray166",
       ];
       var randomIndex = Math.floor(Math.random() * greetings.length);
       return greetings[randomIndex];

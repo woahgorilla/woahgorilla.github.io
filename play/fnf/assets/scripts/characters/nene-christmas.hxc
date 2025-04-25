@@ -43,11 +43,10 @@ class NeneChristmasCharacter extends SparrowCharacter {
 		abot.y = this.y;
 		abot.zIndex = this.zIndex - 1;
 
-		abotViz = new ABotVis(FlxG.sound.music);
+		abotViz = new ABotVis(FlxG.sound.music, false);
 		abotViz.x = this.x;
 		abotViz.y = this.y;
 		abotViz.zIndex = abot.zIndex + 1;
-		FlxG.debugger.track(abotViz);
 	}
 
 	/**
@@ -198,7 +197,7 @@ class NeneChristmasCharacter extends SparrowCharacter {
 		eyeWhites.visible = this.visible;
 		stereoBG.visible = this.visible;
 
-		if (pupil.anim.isPlaying)
+		if (pupil != null && pupil.anim.isPlaying)
 		{
 			switch (pupilState)
 			{

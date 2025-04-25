@@ -1,6 +1,8 @@
 function startSearch() {
   var input, filter, ul, li, a, i;
   input = document.getElementById("search");
+  if (input.value) {document.getElementById("topbar").style.display = "none";}
+  else {document.getElementById("topbar").style.display = "flex"}
   filter = input.value.toUpperCase();
   ul = document.getElementById("search-target");
   li = ul.getElementsByTagName("a");
