@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" type="images/x-icon" href="https://woahgorilla.github.io/favicon.ico">
+        <meta name="keywords" content="webp, image, converter, png, jpg, jpeg, javascript">
+        <meta property="og:title" content="Free webp to png and jpeg converter">
+        <meta property="og:site_name" content="WebP Converter">
+        <meta property="og:description" content="Convert .webp files to png or jpg free with no uploads!">
+        <meta name="description" content="Convert .webp files to png or jpg free with no uploads!">
+        <meta name="author" content="Ultracat39">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Batch WebP Converter</title>
+        <style>
+            body {
+                background-color: #2c3e50; 
+                color: white; 
+                font-family: sans-serif;
+                margin: 0; 
+                padding: 0; 
+                display: flex; 
+                flex-direction: column; 
+                align-items: center; 
+                justify-content: center;
+                height: 100vh;
+            }
+            .hidden {
+                display: none;
+            }
+            .title {
+                font-size: 3.36vw;
+            }
+            .center {
+                text-align: center;
+                width: 56vw;
+            }
+            .box {
+                text-align: center;
+                padding: 0.7vw;
+                margin-bottom: 0.7vw;
+                border: 0.07vw solid #ecf0f1;
+                border-radius: 0.35vw;
+                font-size: 1.12vw;
+                background-color: #34495e;
+                color: white;
+                width: 56vw;
+            }
+            input[type=file]::file-selector-button {
+                border: solid;  
+                cursor: pointer; 
+                font-size: 1.12vw; 
+                color: white;
+                background-color: rgb(0, 255, 13);
+                border-color: rgb(0, 208, 10);
+                transition-duration: 0.3s; 
+                border-radius: 0px; 
+                padding: 0.35vw 0.35vw; 
+                text-align: center; 
+                text-decoration: none; 
+                display: inline-block; 
+                font-size: 1.12vw; 
+                border-radius: 1.4vw; 
+            }
+    
+            input[type=file]::file-selector-button:hover {
+                background-color: rgb(0, 208, 10);
+                border-color: rgb(0, 165, 8);
+            }
+            input[type='file'] {
+                padding: 0.7vw;
+                padding-top: 0;
+                margin-bottom: 0.7vw;
+                font-size: 1.12vw;
+                color: white;
+                width: 17vw;
+            }
+            button {
+                padding: 0.7vw 1.05vw;
+                border: solid;
+                border-radius: 0.35vw;
+                cursor: pointer;
+                font-size: 1.12vw;
+                transition:  0.3s;
+                color: #ffffff;
+            }
+            #reset {cursor: pointer; 
+                background-color: #ff0000; 
+                border: solid; 
+                border-radius: 0.35vw; 
+                border-color: #c70000;
+            }
+            button#reset:hover {
+                background-color: #d20404;
+                border-color: #b50404;
+            }
+            #convert {
+                background-color:#00ff17;
+                border-color: #00c710;
+            }
+            #convert:hover {
+                background-color:#00c710;
+                border-color: #00a707;
+            }
+            select {
+                background-color: #0dc1c1;
+                color: #ffffff;
+                border-radius: 0.35vw; 
+                border: solid;
+                border-color: #149e9e;
+            }
+            .singleLink {
+                color: #149e9e;
+            }
+            .singleLink:hover {
+                color: #128585;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Batch WebP Converter</h1>
+        <div class="box">
+            <p>
+            <input type="file" id="fileInput" multiple accept="image/webp">
+            <br>            
+                Convert image to:
+                <select id="convertTo">
+                    <option value="png">PNG</option>
+                    <option value="jpeg">JPEG/JPG</option>
+                </select>
+            </p>
+            <p>
+                <button id="reset">Clear</button>
+                <button id="convert">Convert</button>
+            </p>
+            <p>Only want to convert one image? Use the <a class="singleLink" href="webp-converter.html">regular converter</a>!</p>
+        </div>
+        <h2>About</h2>
+        <p class="center">Convert all your .webp images to more usble formats for free with no uploads! Easily convert webp to png, or webp to jpg! This efficient converter will make quick work of all WebP images. No ads, AI training, or anything else. Just a simple tool to convert .webp images to other types.</p>
+        <div class="hidden">
+            <a id="dummyDownloadLink"></a>
+            <canvas id="canvas">your browser does not support canvas (which is needed for this to work)</canvas>
+        </div>
+
+        <script src="client-zip.js"></script>
+        <script>
+            let type;
+            const fileInput = document.getElementById('fileInput');
+            const canvas = document.getElementById('canvas');
+            const convertButton = document.getElementById('convert');
+            const resetButton = document.getElementById('reset');
+            let ctx = canvas.getContext('2d');
+            const imgTypeSelector = document.getElementById('convertTo');
+            let zipfiles = [];
+            convertButton.onclick = function() {
+                zipfiles = [];
+                type = imgTypeSelector.value;
+                const files = fileInput.files;
+                for (let i = 0; i < files.length; i++) {
+                    const fileName = files[i].name.split('.')[0] + '.' + type;
+                    window.createImageBitmap(files[i]).then(function (img) {
+                        canvas.height = img.height;
+                        canvas.width = img.width;
+                        ctx.drawImage(img, 0, 0);
+                        addCanvasBlobToZip(fileName);
+                    });
+                }
+            }
+            function addCanvasBlobToZip(name){
+                let canvasBlob = canvas.toBlob((blob) => {
+                    let fileObject = new Object();
+                    fileObject.name = name;
+                    fileObject.input = blob;
+                    zipfiles.push(fileObject);
+                    if (zipfiles.length == fileInput.files.length) {
+                        let a = document.getElementById('dummyDownloadLink');
+                        downloadZip(zipfiles).blob().then(function (blob) {
+                            a.href = window.URL.createObjectURL(blob);
+                            a.download = "result.zip";
+                            a.click();
+                        });
+                        for (let i = 0; i < zipfiles.length; i++) {
+                            URL.revokeObjectURL(zipfiles[i].input);
+                        }
+                        URL.revokeObjectURL(a.href);
+                    }
+                }, 'image/'+type);
+            }
+
+            resetButton.onclick = function() {
+                fileInput.value = null;
+            }
+            
+            </script>
+    </body>
+</html>
