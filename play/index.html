@@ -12,313 +12,220 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="images/x-icon" href="../favicon.ico">
-    <style>
-      button {
-        cursor: pointer; 
-        border: solid; 
-        border-radius: 1.5vw; 
-        background-color: #22c55e;
-        border-color: #1dad52;
-        color: white; 
-        padding: 1vw 2.1vw; 
-        text-align: center; 
-        text-decoration: none; 
-        display: inline-block; 
-        font-size: 1.2vw; 
-        margin-top: 1vw;
-        transition-duration: 0.3s;
-      }
-      button:hover {
-        background-color: #1db154;
-        border-color: #199847;
-      }
-body {
-  font-family: sans-serif;
-  font-size: 1vw;
-  color: #ffffff;
-  text-align: center;
-  background-color: #2c3e50;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-left:3vw;
-  padding-right: 3vw;
-}
-a {
-  text-decoration: none;
-  color: #ffffff;
-}
-.text-center {
-  text-align: center;
-}
-.game-link {
-  height: 17.5vw;
-  width: 15vw;
-}
-.game-tile {
-  /*background-color: #949494;*/
-  height: 15vw;
-  width: 15vw;
-  color: #ffffff;
-  font-size: 1vw;
-  transition-duration: 0.3s;
-  font-size: 1vw;
-  text-align: center;
-  padding: 0.1vw;
-  h1 {opacity: 0; bottom:3vw; transition-duration: 0.3s;}
-}
-.game-tile:hover {
-  text-decoration: none;
-  padding-top: 1vw;
-  font-size: 1vw;
-  h1 {opacity: 1; bottom: 1vw;}
-}
-.game-title {
-  padding-top: 0vw;
-  opacity: 100%;
-  position: relative;
-  bottom: 1vw;
-}
-.game-icon {
-  border-radius: 10%;
-  width: 15vw;
-  height: 15vw;
-}
-.flex-container {
-  display: flex;
-  flex-direction: row;
-  order: 0;
-  flex-grow: 0;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-.container {
-  padding: .7vw;
-}
-#search {
-  width: 50%;
-  text-align: center;
-  font-size: 1.26vw;
-  padding: 0.77vw;
-  border: 0.21vw solid #ddd;
-  border-radius: 2.1vw;
-}
-
-
-    </style>
-  <body>
+    <link rel="stylesheet" href="../woahgorilla.css">
+  <body style="padding-top: 20px;font-family: sans-serif;font-size: 14px;color: #ffffff;text-align: center;background-color: #2c3e50;background-size: cover;padding-left: 43px;padding-right: 43px;">
   
   <br>
     <div class="text-center">
-      <input type="text" class="text-center" id="search" onload="startSearch()" onkeyup="startSearch()" placeholder="Search WoahGorilla Games..." title="Search">
+      <input type="text" class="text-center searchBar" id="search" onload="startSearch()" onkeyup="startSearch()" placeholder="Search WoahGorilla Games..." title="Search">
     </div>
     <br>
     <script src="extras/search.js"></script>
 
     <div id="search-target" class="flex-container">
       
-      <a href="n-gon/" class="game-link container">
-        <div class="game-tile">
+      <a href="n-gon/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="n-gon/n-gon.png" alt="icon" loading="lazy">
           <h1 class="game-title">n-gon</h1>
         </div>
       </a>
-      <a href="fnf/" class="game-link container">
-        <div class="game-tile">
+      <a href="fnf/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="fnf/Funkin.webp" alt="icon" loading="lazy">
           <h1 class="game-title">Friday Night<br>Funkin'</h1>
         </div>
       </a>
-      <a href="2048/" class="game-link container">
-        <div class="game-tile">
+      <a href="2048/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="2048/meta/apple-touch-icon.png" alt="icon" loading="lazy">
           <h1 class="game-title">2048</h1>
         </div>
       </a>
-      <a href="infernal-throne/" class="game-link container">
-        <div class="game-tile">
+      <a href="infernal-throne/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="infernal-throne/icon.webp" alt="icon" loading="lazy">
           <h1 class="game-title">Infernal throne</h1>
         </div>
       </a>
-      <a href="q1k3/" class="game-link container">
-        <div class="game-tile">
+      <a href="q1k3/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="extras/q1k3icon.webp" alt="icon" loading="lazy">
           <h1 class="game-title">Q1K3</h1>
         </div>
       </a>
-      <a href="asteroids/" class="game-link container">
-        <div class="game-tile">
+      <a href="asteroids/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="asteroids/icon.png" alt="icon" loading="lazy">
           <h1 class="game-title">Asteroids</h1>
         </div>
       </a>
-      <a href="underrun/" class="game-link container">
-        <div class="game-tile">
+      <a href="underrun/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="underrun/icon.png" alt="icon" loading="lazy">
           <h1 class="game-title">Underrun</h1>
         </div>
       </a>
-      <a href="backrooms/" class="game-link container">
-        <div class="game-tile">
+      <a href="backrooms/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="backrooms/img/splash.jpg" alt="icon" loading="lazy">
           <h1 class="game-title">Backrooms</h1>
         </div>
       </a>
-      <a href="13th-floor/" class="game-link container">
-        <div class="game-tile">
+      <a href="13th-floor/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="13th-floor/icon.webp" alt="icon" loading="lazy">
           <h1 class="game-title">13th Floor</h1>
         </div>
       </a>
-      <a href="planetesimals/" class="game-link container">
-        <div class="game-tile">
+      <a href="planetesimals/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="planetesimals/icon.png" alt="icon" loading="lazy">
           <h1 class="game-title">Planetesimals</h1>
         </div>
       </a>
-      <a href="1D-game/" class="game-link container">
-        <div class="game-tile">
+      <a href="1D-game/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="1D-game/icon.webp" alt="icon" loading="lazy">
           <h1 class="game-title">1D Game</h1>
         </div>
       </a>
-      <a href="Avabranch.html" class="game-link container">
-        <div class="game-tile">
+      <a href="Avabranch.html" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="extras/avabranch_icon.png" alt="icon" loading="lazy">
           <h1 class="game-title">Avabranch</h1>
         </div>
       </a>
-      <a href="coil/" class="game-link container">
-        <div class="game-tile">
+      <a href="coil/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="extras/coil-icon.png" alt="icon" loading="lazy">
           <h1 class="game-title">Coil</h1>
         </div>
       </a>
-      <a href="dante/" class="game-link container">
-        <div class="game-tile">
+      <a href="dante/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="dante/icon.webp" alt="icon" loading="lazy">
           <h1 class="game-title">Dante</h1>
         </div>
       </a>
-      <a href="hurry/" class="game-link container">
-        <div class="game-tile">
+      <a href="hurry/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="hurry/img/screenshots/0.png" alt="icon" loading="lazy">
           <h1 class="game-title">Hurry</h1>
         </div>
       </a>
-      <a href="raging-gardens/" class="game-link container">
-        <div class="game-tile">
+      <a href="raging-gardens/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="raging-gardens/promo/icon_128x128.png" alt="icon" loading="lazy">
           <h1 class="game-title">Raging<br>Gardens</h1>
         </div>
       </a>
-      <a href="ski/" class="game-link container">
-        <div class="game-tile">
+      <a href="ski/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="ski/icon.png" alt="icon" loading="lazy">
           <h1 class="game-title">Ski</h1>
         </div>
       </a>
       
-      <a href="Cube-engine/" class="game-link container">
-        <div class="game-tile">
+      <a href="Cube-engine/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="Cube-engine/icon.png" alt="icon" loading="lazy">
           <h1 class="game-title">Cube Engine</h1>
         </div>
       </a>
-      <a href="astray/" class="game-link container">
-        <div class="game-tile">
+      <a href="astray/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="astray/icon.webp" alt="icon" loading="lazy">
           <h1 class="game-title">Astray</h1>
         </div>
       </a>
-      <a href="astray2/" class="game-link container">
-        <div class="game-tile">
+      <a href="astray2/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="astray2/icon.webp" alt="icon" loading="lazy">
           <h1 class="game-title">Astray 2</h1>
         </div>
       </a>
-      <a href="HexGL/" class="game-link container">
-        <div class="game-tile">
+      <a href="HexGL/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="HexGL/icon.png" alt="icon" loading="lazy">
           <h1 class="game-title">HexGL</h1>
         </div>
       </a>
-      <a href="13-steps/" class="game-link container">
-        <div class="game-tile">
+      <a href="13-steps/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="13-steps/icon.webp" alt="icon" loading="lazy">
           <h1 class="game-title">13 Steps</h1>
         </div>
       </a>
-      <a href="black-hole-square/" class="game-link container">
-        <div class="game-tile">
+      <a href="black-hole-square/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="black-hole-square/icon.webp" alt="icon" loading="lazy">
           <h1 class="game-title">Black Hole<br>Square</h1>
         </div>
       </a>
-      <a href="the-house/" class="game-link container">
-        <div class="game-tile">
+      <a href="the-house/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="extras/house_icon.png" alt="icon" loading="lazy">
           <h1 class="game-title">The House</h1>
         </div>
       </a>
-      <a href="offline-paradise/" class="game-link container">
-        <div class="game-tile">
+      <a href="offline-paradise/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="offline-paradise/icon.jpeg" alt="icon" loading="lazy">
           <h1 class="game-title">Offline Paradise</h1>
         </div>
       </a>
-      <a href="norman-the-necromancer/" class="game-link container">
-        <div class="game-tile">
+      <a href="norman-the-necromancer/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="extras/norman-icon.jpg" alt="icon" loading="lazy">
           <h1 class="game-title">Norman the<br>Necromancer</h1>
         </div>
       </a>
-      <a href="particle-clicker/" class="game-link container">
-        <div class="game-tile">
+      <a href="particle-clicker/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="particle-clicker/icon.png" alt="icon" loading="lazy">
           <h1 class="game-title">Particle Clicker</h1>
         </div>
       </a>
-      <a href="xiicur-surviivors/" class="game-link container">
-        <div class="game-tile">
+      <a href="xiicur-surviivors/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="xiicur-surviivors/icon.webp" alt="icon" loading="lazy">
           <h1 class="game-title">XIIcur<br>SurVIIvors</h1>
         </div>
       </a>
-      <a href="unavoidable/" class="game-link container">
-        <div class="game-tile">
+      <a href="unavoidable/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="unavoidable/icon.jpg" alt="icon" loading="lazy">
           <h1 class="game-title">Unavoidable</h1>
         </div>
       </a>
-        <a href="minipunk/" class="game-link container">
-        <div class="game-tile">
+        <a href="minipunk/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="minipunk/icon.webp" alt="icon" loading="lazy">
           <h1 class="game-title">MiniPunk</h1>
         </div>
       </a>
-        <a href="phantomicus/" class="game-link container">
-        <div class="game-tile">
+        <a href="phantomicus/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="phantomicus/icon.png" alt="icon" loading="lazy">
           <h1 class="game-title">Phantomicus</h1>
         </div>
       </a>
-        <a href="final-seconds/" class="game-link container">
-        <div class="game-tile">
+        <a href="final-seconds/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="final-seconds/icon.png" alt="icon" loading="lazy">
           <h1 class="game-title">Final Seconds</h1>
         </div>
       </a>
-         <a href="six-and-seven/" class="game-link container">
-        <div class="game-tile">
+         <a href="six-and-seven/" class="tile-container">
+        <div class="tile">
           <img class="game-icon" src="six-and-seven/icon.png" alt="icon" loading="lazy">
           <h1 class="game-title">Six and Seven</h1>
         </div>
       </a>
     </div>
       <br>
-      <button id="back-to-top" style="display: none; position: fixed; bottom: 1.4vw; right: 1.4vw;">Back to top</button>
+      <button id="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px;" class="greenButton">Back to top</button>
       <script>
         const backToTopButton = document.getElementById('back-to-top');
         window.onscroll = function () {
@@ -334,12 +241,12 @@ a {
           document.documentElement.scrollTop = 0;
         };
       </script>
-    <p style="font-size: 1.75vw;" class="text-center">
+    <p style="font-size: 25px" class="text-center">
       I am planning to add more stuff soon. Thank you for your patience.<br><br><br>
       <a href="../" style="color:rgb(84, 84, 255)"><u>Back to the home page!</u></a>
       <br>
-      <p style="text-align: center; max-width: 42vw; margin: 1.4vw auto;">
-        Made with ¬ᴗ¬ by Ultracat39. Don't contact me. I won't respond.
+      <p style="text-align: center; max-width: 600px; margin: 24 auto;">
+        Made by Ultracat39
     </p>
     </p>
     <br>
